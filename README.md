@@ -20,7 +20,7 @@ Folgende Bibliotheken wurden für die Entwicklung verwendet:
 Zunächst wird eine Verbindung zum Messgerät hergestellt, welche wir anhand der `modbus-client node` erreichen können.
 
 
-![modbus_clientnode_nodered](modbus_clientnode_nodered.png)
+![modbus_clientnode_nodered](\images\modbus_clientnode_nodered.png)
 
 In dieser Node müssen wir einige Parameter eintragen, um eine erfolgreiche Verbindung zu erstellen. Diese lauten wie folgt:
 
@@ -36,11 +36,11 @@ In diesem Projekt wurden zwei Flows erstellt um von den elektrischen Größen (w
 
 * Energiemessung:
 
-![Energiemessung_nodered](Energiemessung_nodered.png)
+![Energiemessung_nodered](\images\Energiemessung_nodered.png)
 
 * Oberschwingungen:
 
-![Energiemessung_nodered](Oberschwingungen_nodered.png)
+![Energiemessung_nodered](\images\Oberschwingungen_nodered.png)
 
 Damit diese Flows uns auch den Wert ausgeben den wir suchen, brauchen wir einige Nodes um dies zu erreichen, und zwar:
 
@@ -117,7 +117,7 @@ switch (msg.modbusRequest.address){
 
 Neben dem ganzen Code müssen wir noch auf die Anzahl der Ausgänge dieser Funktion acht geben. Hierbei kommt es darauf an, wie viele `Cases` wir in unserem `Switch Statement` haben.
 
-![convertpayloadtofloat_nodered](convertpayloadtofloat_nodered.png)
+![convertpayloadtofloat_nodered](\images\convertpayloadtofloat_nodered.png)
 
 ## Benutzeroberfläche
 
@@ -134,15 +134,15 @@ Diese Node ist dafür da, um das Ermitteln der aktuellen Werte zu Starten oder z
 
 * `Start Funktion`: hier werden lediglich die Felder `Beschriftung` (welcher Name im User Interface angezeigt werden soll) und `Gruppe` (zuordnung wo diese Nodes angezeigt werden), konfiguriert.
 
-![startbutton_ui_func_nodered](startbutton_ui_func_nodered.png)
+![startbutton_ui_func_nodered](\images\startbutton_ui_func_nodered.png)
 
 * `Stop Funktion`: hierbei wird neben den Feldern wie bei der [Start Funktion](#Start-Funktion), noch der `payload`, konfigurtiert. Beim `payload` wird nur ein `false` eingetragen, welches für das Anhalten des `Abfrageintervalls` da ist.
 
-![stopbutton_ui_func_nodered](stopbutton_ui_func_nodered.png)
+![stopbutton_ui_func_nodered](\images\stopbutton_ui_func_nodered.png)
 
 * `Trigger Node`: diese ist dafür da um eine Abfrage in einem bestimmten Intervall zu konfigurieren. In dieser Node werden die Felder `dann` (wo die `Zeit` eingetragen wird) und das Feld `msg.payload ist gleich` (wo `false` eingetragen wird, um das Intervall nach einem false anzuhalten), konfiguriert.
 
-![trigger_nodered](trigger_nodered.png)
+![trigger_nodered](\images\trigger_nodered.png)
 
 ### Text Node
 
@@ -151,13 +151,13 @@ Diese Node ist dafür da, um die ermittelnden elektrischen Größen in der Benut
 * `Label`: hier wird die Beschriftung, die in der Benutzeroberfläche angezeigt wird, eingetragen.
 * `Value format`: hierbei wird lediglich in den geschweiften Klammern unser Wert eingetragen und die Einheit welche neben dem Wert angezeigt wird.
 
-![value_ui_dashboard_nodered](value_ui_dashboard_nodered.png)
+![value_ui_dashboard_nodered](\images\value_ui_dashboard_nodered.png)
 
 ### Gauge Node
 
 Diese Node unterscheidet sich in der Konfiguration nicht gewaltig von der [Text Node](#Text-Tode). Der einzige Unterschied besteht darin, dass die Einheit in einem separaten Feld eingetragen wird, `Units`.
 
-![gauge_ui_nodered](gauge_ui_nodered.png)
+![gauge_ui_nodered](\images\gauge_ui_nodered.png)
 
 ### Chart Node
 
@@ -166,4 +166,4 @@ Das Chart Node verwenden wir für die Darstellung unserer `harmonischen Schwingu
 * `Typ`: hier müssen wir das normale `Balkendiagramm` auswählen, damit wir die Werte in der X-Achse eintragen.
 * `Y-Achse`: hierbei wird das `minimum` auf `0` und das `maximum` auf `2.5` gesetzt, damit wir einen Wertebereich von `0-2.5%` haben. 
 
-![harmonic_osc_chart_nodered](harmonic_osc_chart_nodered.png)
+![harmonic_osc_chart_nodered](\images\harmonic_osc_chart_nodered.png)
